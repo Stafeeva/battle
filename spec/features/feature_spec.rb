@@ -14,7 +14,7 @@ describe Battle, :type => :feature do
   feature "Hit points" do
     it "should show a player's hit points" do
       sign_in_and_play
-      expect(page).to have_content("Albert HP: 100")
+      expect(page).to have_content("Albert: 100HP")
     end
   end
 end
