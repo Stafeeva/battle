@@ -1,16 +1,33 @@
 # As Player 1,
 # So I can start to win a game of Battle,
 # I want my attack to reduce Player 2's HP
-feature "#player", :plr do
+describe "#player" do
+  subject(:rory) { Player.new('Rory') }
+  subject(:albert) { Player.new('Albert') }
 
-    scenario "returns players name" do
-      expect(Player.new('Rory').name).to eq 'Rory'
+  describe '#name' do
+    it "returns players name" do
+      expect(rory.name).to eq 'Rory'
     end
+  end
 
-    scenario "attack reduces player 2's points" do
-      sign_in_and_play
-      click_button('Attack!')
-      expect(page).to have_content('Albert: 90HP')
+  describe '#hp' do
+    it "returns players points" do
+      expect(rory.hp).to eq Player::HP
     end
+  end
+
+  describe "#attack" do
+    it 'damages the player' do
+      expect(albert).to receive(:receive_damage)
+      rory.attack(albert)
+    end
+  end
+
+  describe '#receive_damage' do
+    it 'reduces the player the player hp' do
+      expect { albert.receive_damage }.to change { albert.hp }.by(-10)
+    end
+  end
 
 end
