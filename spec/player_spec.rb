@@ -9,7 +9,8 @@ feature "#player", :plr do
 
     scenario "attack reduces player 2's points" do
       sign_in_and_play
-      expect{click_button('Attack!')}.to change{player2.hp}.by(-10)
+      click_button('Attack!')
+      expect(page).to have_content('Albert: 90HP')
     end
 
 end
