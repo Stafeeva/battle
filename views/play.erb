@@ -1,8 +1,6 @@
-<html>
-  <h1>Player One: <%= @game.player_one.name %> VS Player Two: <%= @game.player_two.name %></h1>
-  <h2><%= @game.player_two.name %> HP: 100</h2>
+<h1><%= @game.player_one.name %> VS <%= @game.player_two.name %></h1>
+<h1><%= @game.player_two.name %> HP: <%= @game.player_two.hp %></h1>
 
-  <form action='/attack'>
-    <input type='submit' value='Attack!'>
-  </form>
-</html>
+<form action='/attack'>
+  <input type='submit' value='Attack!'>
+</form>

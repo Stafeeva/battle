@@ -1,3 +1,5 @@
+require_relative 'player'
+
 class Game
 
   def initialize(player_one, player_two)
@@ -14,6 +16,10 @@ class Game
 
   def attack(victim)
     victim.receive_damage
+  end
+
+  def switch
+    @players = @players.reverse
   end
 
 end

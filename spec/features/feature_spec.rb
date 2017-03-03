@@ -1,5 +1,3 @@
-
-
 describe Battle, :type => :feature do
   feature "Name input" do
     it "should return \"Let's battle!\"" do
@@ -9,7 +7,7 @@ describe Battle, :type => :feature do
 
     it "should allow 2 players to enter names, submit, store as param and show their names" do
       sign_in_and_play
-      expect(page).to have_content("Player One: Rory VS Player Two: Albert")
+      expect(page).to have_content("Rory VS Albert")
     end
   end
 
