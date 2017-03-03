@@ -1,8 +1,15 @@
+<!DOCTYPE html>
 <html>
-  <h1>Let's battle! Enter your names:</h1>
-  <form method="POST" action="/names">
-    <input id="character_text" type="text" name="player_one">
-    <input id="character_text" type="text" name="player_two">
-    <input type="submit" value="Fight!">
-  </form>
+  <head>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>" />
+  </head>
+
+  <body>
+    <h1>Let's battle! Enter your names:</h1>
+    <form method="POST" action="/names">
+      <input id="character_text" type="text" name="player_one">
+      <input id="character_text" type="text" name="player_two">
+      <input type="submit" value="Fight!">
+    </form>
+  </body>
 </html>
